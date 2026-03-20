@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thomas's Table</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: #0f1720;
+            color: white;
+        }
+
+        header {
+            background: #111;
+            padding: 10px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            /* allows wrapping on small screens */
+            gap: 10px;
+        }
+
+        nav a:hover {
+            color: orange;
+        }
+
+        .hero {
+            background: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836') center/cover;
+            padding: 50px 15px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+        }
+
+        @media(max-width:768px) {
+            .hero h1 {
+                font-size: 30px;
+            }
+        }
+
+        @media(max-width:480px) {
+            .hero h1 {
+                font-size: 24px;
+            }
+        }
+
+        .hero h2 {
+            color: orange;
+        }
+
+
+        .menu-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            padding: 15px;
+        }
+
+        .box {
+            border: 1px solid #333;
+            padding: 15px;
+        }
+
+        .box img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+        }
+
+
+
+
+        .item {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed #444;
+            margin: 5px 0;
+        }
+
+        button {
+            background: orange;
+            border: none;
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+            min-width: 100px;
+            transition: 0.3s;
+        }
+
+        @media(max-width:480px) {
+            button {
+                width: 80%;
+            }
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        @media(max-width:768px) {
+            .menu-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width:480px) {
+            .menu-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        button:hover {
+            background: darkorange;
+            transform: scale(1.05);
+        }
+
+        #heroImg {
+            max-width: 100%;
+            transition: 0.3s;
+        }
+
+        .dark {
+            background: #111;
+            color: #eee;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: black;
+        }
+
+        @media(max-width:600px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+        }
+
+        input {
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 4px;
+            border: none;
+            width: 250px;
+        }
+
+        @media(max-width:480px) {
+            input {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#contact">Contact</a>
+            <button id="darkBtn">Dark Mode</button>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1 id="title">THOMAS’S TABLE</h1>
+        <h2 id="special">Fresh homemade meals, just like home ❤️</h2>
+        <p>Good food. Good mood.</p>
+    </section>
+
+    <div class="menu-container" id="menu">
+
+        <div class="box">
+            <img src="assets/starters.jpg" alt="Homemade soup">
+
+            <h3>Starters</h3>
+            <div class="item"><span>Pumpkin Soup</span><span>R50</span></div>
+            <div class="item"><span>Garlic Bread</span><span>R35</span></div>
+            <div class="item"><span>Garden Salad</span><span>R40</span></div>
+            <div class="item"><span>Chicken livers</span><span>R37</span></div>
+        </div>
+
+        <div class="box">
+            <img src="assets/Mains.jpg" alt="Home cooked meal">
+
+            <h3>Mains</h3>
+            <div class="item"><span>Roast Chicken</span><span>R110</span></div>
+            <div class="item"><span>Beef Burger</span><span>R90</span></div>
+            <div class="item"><span>Chicken Pasta</span><span>R85</span></div>
+            <div class="item"><span>Large Pizza</span><span>R130</span></div>
+        </div>
+
+        <div class="box">
+            <img src="assets/dessert.jpg" alt="Homemade cake">
+
+            <h3>Desserts</h3>
+            <div class="item"><span>Chocolate Cake</span><span>R45</span></div>
+            <div class="item"><span>Ice Cream</span><span>R30</span></div>
+            <div class="item"><span>Apple Pie</span><span>R40</span></div>
+            <div class="item"><span>Cheese Cake</span><span>R50</span></div>
+        </div>
+
+        <div class="box">
+            <img src="assets/drinks.jpg" alt="Coffee drink">
+
+            <h3>Drinks</h3>
+            <div class="item"><span>Coffee</span><span>R20</span></div>
+            <div class="item"><span>Milkshake</span><span>R35</span></div>
+            <div class="item"><span>Fresh Juice</span><span>R30</span></div>
+            <div class="item"><span>Soft Drinks</span><span>R25</span></div>
+
+
+        </div>
+
+    </div>
+
+    <section style="text-align:center;">
+        <img id="heroImg" src="https://images.unsplash.com/photo-1512058564366-c9e3e0463b9c" alt="Homemade food">
+        <br>
+
+        <button onclick="changeImg('burger')">Burger</button>
+        <button onclick="changeImg('pizza')">Pizza</button>
+        <button onclick="changeImg('dessert')">Dessert</button>
+    </section>
+
+
+    <section id="contact" style="text-align:center;">
+        <h3>Contact</h3>
+        <form onsubmit="return checkEmail()">
+            <input type="text" placeholder="Name" required><br>
+            <input type="text" id="email" placeholder="Email"><br>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+
+    <section style="text-align:center;">
+        <input id="newItem" placeholder="Add menu item">
+        <button onclick="addItem()">Add</button>
+    </section>
+
+    <audio id="sound" src="https://www.soundjay.com/buttons/sounds/button-3.mp3"></audio>
+
+    <footer>
+        <p>© 2026 Thomas's Table</p>
+    </footer>
+
+    <script>
+
+        function changeImg(type) {
+            const img = document.getElementById("heroImg");
+            const title = document.getElementById("title");
+            const special = document.getElementById("special");
+
+            if (type === "burger") {
+                img.src = "assets/Mains.jpg";
+                title.textContent = "Burger Time 🍔";
+                special.textContent = "Today's Special: Beef Burger";
+            }
+            else if (type === "pizza") {
+                img.src = "assets/Mains.jpg";
+                title.textContent = "Pizza Vibes 🍕";
+                special.textContent = "Today's Special: Margherita Pizza";
+            }
+            else {
+                img.src = "assets/dessert.jpg";
+                title.textContent = "Sweet Treats 🍰";
+                special.textContent = "Today's Special: Chocolate Cake";
+            }
+        }
+
+        const img = document.getElementById("heroImg");
+        img.onmouseover = () => img.style.opacity = "0.7";
+        img.onmouseleave = () => img.style.opacity = "1";
+
+
+        function addItem() {
+            const value = document.getElementById("newItem").value;
+
+            if (value) {
+                const div = document.createElement("div");
+                div.className = "item";
+                div.innerHTML = `<span>${value}</span><span>R--</span>`;
+
+                const boxes = document.querySelectorAll(".box");
+                boxes[0].appendChild(div);
+                document.getElementById("sound").play();
+            }
+        }
+
+        function checkEmail() {
+            const email = document.getElementById("email").value;
+
+            if (!email.includes("@")) {
+                alert("Enter valid email");
+                return false;
+            }
+            return true;
+        }
+
+        /* dark mode */
+        const btn = document.getElementById("darkBtn");
+
+        if (localStorage.getItem("darkMode") === "on") {
+            document.body.classList.add("dark");
+        }
+
+        btn.onclick = () => {
+            document.body.classList.toggle("dark");
+
+            if (document.body.classList.contains("dark")) {
+                localStorage.setItem("darkMode", "on");
+            } else {
+                localStorage.setItem("darkMode", "off");
+            }
+        };
+
+    </script>
+
+</body>
+
+</html>
